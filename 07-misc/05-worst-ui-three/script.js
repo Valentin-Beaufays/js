@@ -10,19 +10,16 @@
 // You will have time to focus on it later.
 
 (function() {
-
-    // your code here
     let buttons = document.querySelectorAll('button');
     let target = document.getElementById('target');
-    let inputId = []
+    let inputId = [];
     //generate array of buttons IDs
     for(let i=0;i<buttons.length;i++){
         inputId.push(buttons[i].getAttribute('id').substring(4));
     }
     //start function generator loop
     for(let j=0;j<buttons.length;j++){
-        let toggle = true;
-        let t;
+        let t;//spin() timeOut variable
         let input = document.getElementById(inputId[j]);
         //spin number in input field
         let spin = ()=>{
@@ -31,14 +28,14 @@
                 input.value=input.getAttribute('data-min');
             }
             else{
-                if(input.value<10){
+                if(input.value<10)
                     input.value="0"+input.value;
-                }
             }
             t = setTimeout(spin, 10);
         }
         spin();
         //on click on button with id inputId[j]
+        let toggle = true;//toggler for click event
         document.getElementById('fix-'+inputId[j]).addEventListener('click',()=>{
             if(toggle){
                 clearTimeout(t);//stop spin function timeout

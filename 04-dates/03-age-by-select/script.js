@@ -15,7 +15,7 @@
     document.getElementById('run').addEventListener('click',() => {
         let birth = new Date(document.getElementById("dob-year").value, document.getElementById("dob-month").value-1,document.getElementById("dob-day").value)
         let currentDate = new Date();
-        /*let age = null;
+        let age = null;
         //check if birth is after current date
         console.log(birth>currentDate);
         if(birth.getTime()>currentDate.getTime()){
@@ -48,10 +48,7 @@
                     age = currentDate.getMonth()-birth-getMonth()
                 }
             }
-        }*/
-        let year = null;
-        let 
-
+        }
     })
 
 
